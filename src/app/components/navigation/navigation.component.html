@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-between align-items-center nav">
+     <div class="nav-item mr-4">
+          <img
+               src="../../../assets/images/shopping-cart.png"
+               alt=""
+               [ngStyle]="{ width: '50px', height: '50px', cursor: 'pointer' }"
+               routerLink='/cart'
+          />
+     </div>
+     <div class="nav-item mr-4">
+          <button type="button" class="btn btn-sm btn-primary" (click)="handleClick()">Sign-Out</button>
+     </div>
+     <div class="nav-item mr-4" >
+          <img [src]="avatar" alt="" class="rounded-circle" [ngStyle]="{ position: 'relative', width: '50px', height: '50px' }" />
+     </div>
+     <div class="nav-item mr-4">
+          <span>{{username}}</span>
+     </div>
+</div>

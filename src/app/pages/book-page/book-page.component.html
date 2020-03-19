@@ -1,0 +1,34 @@
+<app-header>
+     <app-navigation></app-navigation>
+</app-header>
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="!loading && !error" class="d-flex m-3" >
+     <div class="image-item mr-5" [ngStyle]="{width: '460px'}">
+          <img [src]="book.cover"  class="mb-2 border" [ngStyle]="{width: '460px'}" />
+          <p>
+Description:
+          {{book.description}}
+          </p>
+     </div>
+     <div class="desc" [ngStyle]="{width: '400px'}">
+          <div class="title mb-3 pt-4">
+          <h3>{{book.title}}</h3>
+          </div>
+          <div class="title mb-3">
+          Author:
+          {{' '}}
+          {{book.author}}
+          </div>
+          <div class="level mb-3">
+          Level:
+          {{' '}}
+          {{book.level}}
+          </div>
+          <div class="tags mb-2">
+          Tags:
+          {{' '}}
+          {{tags}}
+          </div>
+     </div>
+     <app-counter [selectBook]="book"></app-counter>
+</div>

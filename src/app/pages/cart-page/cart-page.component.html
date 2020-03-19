@@ -1,0 +1,36 @@
+<app-header>
+     <app-navigation></app-navigation>
+</app-header>
+<div class="cart-list position-relative mt-3">
+     <div class="d-flex flex-row-reverse">
+          <button type="button" class="btn btn-primary mr-4" [disabled]="books.length < 1" (click)="purchase()">
+               Purchase
+          </button>
+     </div>
+     <div *ngIf="books.length < 1; else cartList">
+          <div class="cart-empty text-center" [ngStyle]="{ width: '200px', height: '250px', margin: '0 auto', paddingTop: '200px'}">
+               <img src="../../../assets/images/shopping-cart.png" alt="" [ngStyle]="{ width: '120px', height: '150px' }" />
+               <p>Cart is empty...</p>
+          </div>
+     </div>
+
+     <ng-template #cartList>
+          <div class="m-2">
+               <div *ngFor="let item of books" class="cart-item d-flex justify-content-between align-items-center border p-4">
+                    <div class="item d-flex justify-content-between">
+                         <div class="cart-title mr-3">{{item.title}}</div>
+                         <div class="cart-count">Count:{{' '}}{{item.count}}</div>
+                    </div>
+                    <div class="item">
+                       Total price:{{' '}}{{item.count * item.price}}{{'$'}}
+                    </div>
+               </div>
+
+               <div class="total-price-item d-flex flex-row-reverse mt-2">
+                    <div>
+                         <h5>Total Price, $ {{' '}}{{totalPrice}}</h5>
+                    </div>
+               </div>
+          </div>
+     </ng-template>
+</div>

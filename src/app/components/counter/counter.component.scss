@@ -1,0 +1,53 @@
+.form-control {
+     display: block;
+     width: 100%;
+     height: calc(1.5em + .75rem + 2px);
+     padding: .375rem .75rem;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 1.5;
+     color: #495057;
+     background-color: #fff;
+     background-clip: padding-box;
+     border: 1px solid #ced4da;
+     border-radius: .25rem;
+     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+ }
+
+ .position-relative {
+     position: relative!important;
+ }
+
+ .m-4 {
+     margin: 1.5rem!important;
+ }
+ .justify-content-between {
+     -ms-flex-pack: justify!important;
+     justify-content: space-between!important;
+ }
+ .d-flex {
+     display: -ms-flexbox!important;
+     display: flex!important;
+ }
+
+ .position-absolute {
+     position: absolute!important;
+ }
+ .btn-group-lg>.btn, .btn-lg {
+     padding: .5rem 1rem;
+     font-size: 1.25rem;
+     line-height: 1.5;
+     border-radius: .3rem;
+ }
+
+ .m-4 {
+     margin: 1.5rem!important;
+ }
+ .justify-content-between {
+     -ms-flex-pack: justify!important;
+     justify-content: space-between!important;
+ }
+ .d-flex {
+     display: -ms-flexbox!important;
+     display: flex!important;
+ }

@@ -1,0 +1,44 @@
+<app-header>
+     <app-navigation></app-navigation>
+</app-header>
+<main>
+     <!-- <app-filter [filterBooks]="filteredBooks"></app-filter> -->
+     <section class="mt-4 container">
+          <form class="filter d-flex" method="#">
+               <div class="item">
+               <input
+                    type="text"
+                    name="search"
+                    class="form-control mr-5"
+                    [ngStyle]="{ width: '400px' }"
+                    [(ngModel)]="searchFilter"
+                    placeholder="Search by title"
+               />
+               </div>
+               <div class="item">
+               <select name="price" class="form-control" [(ngModel)]="selectFilter" name="select">
+                    <option *ngFor="let item of selectOptions"
+                            [ngValue]="item.name">{{item.value}}</option>
+               </select>
+               </div>
+          </form>
+     </section>
+
+     <div class="books-list d-flex flex-wrap justify-content-center mt-5">
+          <div *ngIf="loading">Loading...</div>
+          <div *ngFor="let book of filteredBooks | filter:searchFilter:selectFilter"
+               class="book col-sm-3 shadow rounded p-3 mr-3 mb-4 bg-white position-relative text-black">
+               <div class="img-block mb-2">
+                 <img [src]="book.cover" class="img" alt=""/>
+               </div>
+               <h6 class="title">{{book.title}}</h6>
+               <p class="text text-break">{{book.author}}</p>
+               <div class="d-flex justify-content-between">
+                    <div>{{book.price}}{{' '}} $</div>
+                    <button type="button" class="btn btn-sm btn-primary" [routerLink]="['/books',book.id]" >
+                   View
+                   </button>
+               </div>
+          </div>
+     </div>
+</main>

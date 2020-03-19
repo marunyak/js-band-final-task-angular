@@ -1,0 +1,23 @@
+.container {
+     width: 100%;
+     padding-right: 15px;
+     padding-left: 15px;
+     margin-right: auto;
+     margin-left: auto;
+ }
+
+ .mr-5, .mx-5 {
+     margin-right: 3rem!important;
+ }
+
+ .mt-4, .my-4 {
+     margin-top: 1.5rem!important;
+ }
+     @media (min-width: 1200px){
+     .container {
+         max-width: 1140px;
+     }}
+     @media (min-width: 992px){
+     .container {
+         max-width: 960px;
+     }}
