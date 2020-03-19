@@ -1,0 +1,22 @@
+<app-header></app-header>
+<main>
+    <div class="d-flex justify-content-center mt-5">
+        <div class="text-center">
+            <img src="assets/images/defaultPhoto.jpg" [ngStyle]="{height: '200px', width: '200px' }" alt="" class="img"/>
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="form-group mt-3">
+                    <label htmlFor="username" class="font-weight-bold block">
+                Username
+                        <input type="text" formControlName="username" class="form-control mt-2" placeholder="type Username"/>
+                        <div *ngIf="form.get('username').invalid" class="validation">
+                            <div *ngIf="form.get('username').errors.minlength" class="error text-danger text-break text-center">Small username!</div>
+
+                            <div *ngIf="form.get('username').errors.maxlength" class="error text-danger text-break text-center">Large username!</div>
+                        </div>
+                    </label>
+                    <button class="btn btn-block btn-primary mt-3" type="submit" [disabled]="form.invalid" >Sign-In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

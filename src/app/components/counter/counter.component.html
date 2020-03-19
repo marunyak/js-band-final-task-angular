@@ -1,0 +1,32 @@
+<div class="m-3 position-relative"
+     [ngStyle]="{
+          width: '600px',
+          height: '400px',
+          borderStyle: 'dotted',
+          borderWidth: 2,
+          borderRadius: 1
+     }" >
+     <form >
+          <div class="price d-flex justify-content-between m-4">
+               <div class="price-item"><h5>Price, $</h5></div>
+               <div class="price-item"><h5>{{price}}</h5></div>
+          </div>
+          <div class="price d-flex justify-content-between m-4">
+          <div class="price-item"><h5>Count</h5></div>
+               <div class="price-item">
+                    <input class="form-control" name="countBooks" type="number" min="1" [max]="count" [(ngModel)]="countBooks"
+                    (input)="handleChange($event)" required />
+               </div>
+          </div>
+          <div class="total-price d-flex justify-content-between m-4">
+          <div class="price-item"><h5>Total price</h5></div>
+               <div class="price-item">
+                    <h5>{{totalPrice}}</h5>
+               </div>
+          </div>
+          <button class="btn btn-lg btn-primary position-absolute"
+                  [ngStyle]="{ right: '20px', bottom: '40px' }" type="submit" (click)="handleSubmit($event)">
+          Add to cart
+          </button>
+     </form>
+</div>

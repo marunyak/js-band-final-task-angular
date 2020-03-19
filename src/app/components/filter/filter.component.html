@@ -1,0 +1,22 @@
+<section class="mt-4 container">
+     <form class="filter d-flex" method="#">
+          <div class="item">
+          <input
+               type="text"
+               name="search"
+               class="form-control mr-5"
+               [ngStyle]="{ width: '400px' }"
+               (input)="onChange($event)"
+               placeholder="Search by title"
+          />
+          </div>
+          <div class="item">
+          <select name="price" class="form-control" (change)="onChange($event)">
+               <option value="none">Price</option>
+               <option value="low_price">0 &lsaquo; Price &lsaquo; 15</option>
+               <option value="medium_price">15 &lsaquo; Price &lsaquo; 30</option>
+               <option value="high_price">Price &rsaquo; 30</option>
+          </select>
+          </div>
+     </form>
+</section>
